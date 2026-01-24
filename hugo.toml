@@ -1,4 +1,4 @@
-baseURL = "https://zb.ehlo.pl/"  # Update with your domain
+baseURL = "https://ehlo-pl.github.io/"  # Update with your domain
 languageCode = "en-us"
 title = "ehlo.pl - modern e-mail?"
 theme = "PaperMod"
