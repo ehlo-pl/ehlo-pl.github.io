@@ -1,0 +1,30 @@
+baseURL = "https://zb.ehlo.pl/"  # Update with your domain
+languageCode = "en-us"
+title = "ehlo.pl - modern e-mail?"
+theme = "PaperMod"
+
+[params]
+  author = "Ziemek Borowski"
+  description = "My personal blog"
+
+[outputs]
+  home = ["HTML", "JSON"]  # Generates search index
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 10
+    
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 20
+    
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 30
