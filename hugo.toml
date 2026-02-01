@@ -1,12 +1,11 @@
-#baseURL = "https://ehlo-pl.github.io/"  # Update with your domain
-baseURL = "https://ehlo.pl/"  # Update with your domain
+baseURL = "https://blog.ehlo.pl/"  # Update with your domain
 languageCode = "en-us"
 title = "ehlo.pl - modern e-mail?"
 theme = "PaperMod"
 
 [params]
   author = "Ziemek Borowski"
-  description = "My personal blog"
+  description = "my (and borrowed) random comments and discoveries"
 
 [outputs]
   home = ["HTML", "JSON"]  # Generates search index
