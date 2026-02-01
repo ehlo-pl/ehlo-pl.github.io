@@ -53,4 +53,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           force_orphan: true
-          cname: ""  # Leave empty; set custom domain in GitHub Settings instead
+          cname: "ehlo.pl"  # Leave empty; set custom domain in GitHub Settings instead
