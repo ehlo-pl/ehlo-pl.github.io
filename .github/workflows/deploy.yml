@@ -6,51 +6,50 @@ on:
       - main
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
-      # Step 1: Checkout code with proper submodule handling
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           submodules: true
-          
-      # Step 2: Fix submodule SSH issue (convert to HTTPS)
-      - name: Fix submodule URLs
-        run: |
-          git config --file .gitmodules --get-regexp path | while read path module; do
-            url=$(git config --file .gitmodules --get "submodule.$module.url")
-            if [[ $url == git@* ]]; then
-              new_url=$(echo "$url" | sed 's/git@github.com:/https:\/\/github.com\//' | sed 's/\.git$//')
-              git config --file .gitmodules --set "submodule.$module.url" "$new_url"
-            fi
-          done
-          git submodule sync
-          git submodule update --init --recursive
-          
-      # Step 3: Setup Hugo
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: latest
           extended: true
-          
-      # Step 4: Build site with verbose output for debugging
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
       - name: Build
-        run: hugo --minify
-        
-      # Step 5: Deploy to GitHub Pages using HTTPS token
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        run: hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          force_orphan: true
-          cname: "blog.ehlo.pl"  # Leave empty; set custom domain in GitHub Settings instead
+          path: ./public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
