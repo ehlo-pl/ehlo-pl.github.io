@@ -65,7 +65,7 @@ Everything the client is allowed to do next — authenticate, start TLS, send 8-
 content, respect a size limit — is decided by that list. `SIZE`
 ([RFC 1870](https://www.rfc-editor.org/rfc/rfc1870.html)), `8BITMIME`
 ([RFC 6152](https://www.rfc-editor.org/rfc/rfc6152.html)) and `STARTTLS` are not
-decorations; they change what a correct client does. The last line uses `250 ` (space)
+decorations; they change what a correct client does. The last line uses `250` (space)
 instead of `250-` (dash) — that is how the client knows the capability list is finished.
 
 **The envelope is not the message.** `MAIL FROM` and `RCPT TO` are the *envelope* — that
