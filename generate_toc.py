@@ -3,7 +3,7 @@ import re
 import glob
 
 POSTS_DIR = os.path.join('content', 'posts')
-OUTPUT_FILE = 'toc.md'
+OUTPUT_FILE = os.path.join('content', 'lists', 'toc.md')
 
 def parse_frontmatter(filepath):
     title = os.path.basename(filepath)
