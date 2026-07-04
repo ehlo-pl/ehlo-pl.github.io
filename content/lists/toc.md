@@ -4,11 +4,11 @@
 - [Icewolf.EXO.SpamAnalyze](content/posts/Icewolf.EXO.SpamAnalyze.md) - 2026-07-04 **[DRAFT]**
 - [ExoGraphGUI](content/posts/ExoGraphGUI.md) - 2026-07-04 **[DRAFT]**
 - [ExoHelper: Lightweight EXO Access Without ExchangeOnlineManagement](content/posts/EXO-bypass-ExchangeOnlineManagement.md) - 2026-07-04
-- [GraphAPIAuditEvents](content/posts/GraphAPIAuditEvents.md) - 2026-06-27 **[DRAFT]**
+- [Hunting Graph API access to Exchange with GraphAPIAuditEvents](content/posts/GraphAPIAuditEvents.md) - 2026-06-27 **[DRAFT]**
 - [SendEmail_at_rosettacode_org](content/posts/SendEmail_at_rosettacode_org.md) - 2026-02-07 **[DRAFT]**
 - [Freeipa and Postfix](content/posts/freeipa-and-postfix.md) - 2026-02-02 **[DRAFT]**
-- [JMAP Fundamentals](content/posts/2026-01-jmap-fundamentals.md) - 2026-01-25 **[DRAFT]**
-- [HVE](content/posts/2026-01-hve.md) - 2026-01-01 **[DRAFT]**
+- [JMAP Fundamentals](content/posts/jmap-fundamentals.md) - 2026-01-25 **[DRAFT]**
+- [HVE](content/posts/hve.md) - 2026-01-01 **[DRAFT]**
 - [Where Email Is Heading: JMAP Adoption, Interoperability, and Your Next Project](content/posts/where-email-is-heading.md) - 2025-08-25 **[DRAFT]**
 - [Email Books Worth Reading: Fundamentals Beyond Technical Docs](content/posts/email-books-worth-reading.md) - 2025-08-18 **[DRAFT]**
 - [Lessons from 20 Years of Email Administration](content/posts/lessons-from-20-years.md) - 2025-08-11 **[DRAFT]**
@@ -39,41 +39,41 @@
 - [My Lab Setup: Docker, Containers, and Test Domains](content/posts/lab-setup-docker-containers-test-domains.md) - 2025-02-17 **[DRAFT]**
 - [Email Fundamentals for the Impatient Architect](content/posts/email-fundamentals-for-impatient-architect.md) - 2025-02-10 **[DRAFT]**
 - [Why I'm Exploring Open-Source Email in 2025](content/posts/why-exploring-opensource-email-2026.md) - 2025-02-03 **[DRAFT]**
-- [Powershell Regexp](content/posts/2023-07-powershell-regexp.md) - 2023-07-01 **[DRAFT]**
-- [how to send simple mail to Exchange using EWS and Windows PowerShell](content/posts/2023-06-NTS-how-send-mail-from-EXO-using-EWS.md) - 2023-06-01 **[DRAFT]**
-- [note to self how to send simple mail to Exchange using Graph API and Windows PowerShell](content/posts/2023-06-NTS-how-send-mail-from-EXO-using-Graph-API.md) - 2023-06-01 **[DRAFT]**
-- [note to self - how to send simple mail to Exchange using EWS and Windows PowerShell](content/posts/2023-06-NTS-how-send-mail-from-EXO-using-GraphAPI-PowerShell-Module.md) - 2023-06-01 **[DRAFT]**
-- [note to self - How-to-Export-mail-to-EML](content/posts/2023-06-NTS-How-to-Export-mail-to-EML.md) - 2023-06-01 **[DRAFT]**
-- [note to self - modern corporate mailing tools](content/posts/2023-06-NTS-ModernMailingTools.md) - 2023-06-01 **[DRAFT]**
-- [Sending SMTP Mails Using Curl](content/posts/2023-06-sending-smtp-mails-using-curl.md) - 2023-06-01 **[DRAFT]**
-- [NTS DKIM](content/posts/2023-03-NTS-DKIM.md) - 2023-04-01 **[DRAFT]**
-- [NTS DMARC](content/posts/2023-03-NTS-DMARC.md) - 2023-04-01 **[DRAFT]**
-- [NTS DNSSEC](content/posts/2023-03-NTS-DNSSEC.md) - 2023-04-01 **[DRAFT]**
-- [Note to Self - Mail Sender Authentication Protocols, and an Overview of SPF, DKIM, DMARC and others](content/posts/2023-03-NTS-Mail-Sender-Auth-protocols.md) - 2023-04-01 **[DRAFT]**
-- [Note to self - SPF - \](content/posts/2023-03-NTS-SPF.md) - 2023-04-01 **[DRAFT]**
-- [Notes from field - DANE](content/posts/2023-04-NTS-DANE.md) - 2023-04-01 **[DRAFT]**
-- [Emonji in linkedin takline](content/posts/2023-03-Emonji-in-LinkedIn.md) - 2023-03-01 **[DRAFT]**
-- [Nff How_To_Recover_User_Emails_In_Microsoft_365](content/posts/2023-03-NfF-How_to_recover_user_emails_in_Microsoft_365.md) - 2023-03-01 **[DRAFT]**
-- [Nff Userphoneonexo](content/posts/2023-03-NfF-UserPhoneonExo.md) - 2023-03-01 **[DRAFT]**
-- [NTS DNS_Lookingglasses](content/posts/2023-03-NTS-DNS_LookingGlasses.md) - 2023-03-01 **[DRAFT]**
-- [Note to self - ICMP and TCP connectivity Looking glasses](content/posts/2023-03-NTS-LookingGlasses.md) - 2023-03-01 **[DRAFT]**
-- [NTS Powershell Qrcodes](content/posts/2023-03-NTS-PowerShell-QRCodes.md) - 2023-03-01 **[DRAFT]**
-- [Note to self -  PowerShell-raise-number-of-element-in-output](content/posts/2023-03-NTS-PowerShell-raise-number-of-element-in-output.md) - 2023-03-01 **[DRAFT]**
-- [Note to self - PowerShell and user folders in Windows](content/posts/2023-03-NTS-PowerShell_andUserFoldersinWindows.md) - 2023-03-01 **[DRAFT]**
-- [NTS Visualize Mail Headers](content/posts/2023-03-NTS-visualize-mail-headers.md) - 2023-03-01 **[DRAFT]**
-- [SMTP server in node.js?](content/posts/2020-12-SMTP-server-in-node_js.md) - 2020-12-01 **[DRAFT]**
-- [PowerShell script templates](content/posts/2020-04-powershell-script-templates.md) - 2020-04-01 **[DRAFT]**
-- [Read, stupid...](content/posts/2019-12-read-stupid.md) - 2019-12-01 **[DRAFT]**
-- [Curl is the best](content/posts/2019-07-curl_is_the_best.md) - 2019-07-01 **[DRAFT]**
-- [Microsoft Message Analyze, netsh trace](content/posts/2019-07-netsh-trace.md) - 2019-07-01 **[DRAFT]**
-- [Free online courses for Microsoft 365 and Azure / openedx.microsoft.com](content/posts/2019-06-Free_openedx_courses_for_Microsoft365andAzure.md) - 2019-06-01 **[DRAFT]**
-- [PSCustomObject vs Select-Object with calculated properties](content/posts/2019-06-PSCustomObject-vs-Select-Object with calculated properties.md) - 2019-06-01 **[DRAFT]**
-- [Test-GMERemoteX509Cert](content/posts/2019-06-Test-GMERemoteX509Cert.md) - 2019-06-01 **[DRAFT]**
-- [list of easy to pronouce colors](content/posts/2018-07-List-of-simple-to-pronounce-colors.md) - 2018-07-01 **[DRAFT]**
-- [openssl s_client vs gnutls vs keytool](content/posts/2018-07-openssl_s_client_vs_gnutls_keytool.md) - 2018-07-01 **[DRAFT]**
-- [PowerShell resolveHostByName](content/posts/2018-07-PowerShell-resolveHostByName.md) - 2018-07-01 **[DRAFT]**
-- [PowerShell and list of all DC in forrest](content/posts/2018-07-PowerShell_and_List_of_All_DC_in_Forest.md) - 2018-07-01 **[DRAFT]**
-- [some useful Azure Shell 2.0 commands](content/posts/2018-01-azure-shell-2-0-some-uefull-commands.md) - 2018-01-01 **[DRAFT]**
-- [GraphViz diagram base on PowerShell Test-NetConnection -Traceroute](content/posts/2018-01-powershell-traceroute-usig-GraphViz.md) - 2018-01-01 **[DRAFT]**
-- [Simple e-mail testlab using Azure and iRedMail](content/posts/2017-12-IRedMail-simple-mailserver.md) - 2017-12-01 **[DRAFT]**
-- [You're up and running!](content/posts/2014-03-youre-up-and-running.md) - 2014-03-01
+- [Powershell Regexp](content/posts/powershell-regexp.md) - 2023-07-01 **[DRAFT]**
+- [how to send simple mail to Exchange using EWS and Windows PowerShell](content/posts/NTS-how-send-mail-from-EXO-using-EWS.md) - 2023-06-01 **[DRAFT]**
+- [note to self how to send simple mail to Exchange using Graph API and Windows PowerShell](content/posts/NTS-how-send-mail-from-EXO-using-Graph-API.md) - 2023-06-01 **[DRAFT]**
+- [note to self - how to send simple mail to Exchange using EWS and Windows PowerShell](content/posts/NTS-how-send-mail-from-EXO-using-GraphAPI-PowerShell-Module.md) - 2023-06-01 **[DRAFT]**
+- [note to self - How-to-Export-mail-to-EML](content/posts/NTS-How-to-Export-mail-to-EML.md) - 2023-06-01 **[DRAFT]**
+- [note to self - modern corporate mailing tools](content/posts/NTS-ModernMailingTools.md) - 2023-06-01 **[DRAFT]**
+- [Sending SMTP Mails Using Curl](content/posts/sending-smtp-mails-using-curl.md) - 2023-06-01 **[DRAFT]**
+- [Notes from field - DANE](content/posts/NTS-DANE.md) - 2023-04-01 **[DRAFT]**
+- [NTS DKIM](content/posts/NTS-DKIM.md) - 2023-04-01 **[DRAFT]**
+- [NTS DMARC](content/posts/NTS-DMARC.md) - 2023-04-01 **[DRAFT]**
+- [NTS DNSSEC](content/posts/NTS-DNSSEC.md) - 2023-04-01 **[DRAFT]**
+- [Note to Self - Mail Sender Authentication Protocols, and an Overview of SPF, DKIM, DMARC and others](content/posts/NTS-Mail-Sender-Auth-protocols.md) - 2023-04-01 **[DRAFT]**
+- [Note to self - SPF - \](content/posts/NTS-SPF.md) - 2023-04-01 **[DRAFT]**
+- [Emonji in linkedin takline](content/posts/Emonji-in-LinkedIn.md) - 2023-03-01 **[DRAFT]**
+- [Nff How_To_Recover_User_Emails_In_Microsoft_365](content/posts/NfF-How_to_recover_user_emails_in_Microsoft_365.md) - 2023-03-01 **[DRAFT]**
+- [Nff Userphoneonexo](content/posts/NfF-UserPhoneonExo.md) - 2023-03-01 **[DRAFT]**
+- [NTS DNS_Lookingglasses](content/posts/NTS-DNS_LookingGlasses.md) - 2023-03-01 **[DRAFT]**
+- [Note to self - ICMP and TCP connectivity Looking glasses](content/posts/NTS-LookingGlasses.md) - 2023-03-01 **[DRAFT]**
+- [NTS Powershell Qrcodes](content/posts/NTS-PowerShell-QRCodes.md) - 2023-03-01 **[DRAFT]**
+- [Note to self -  PowerShell-raise-number-of-element-in-output](content/posts/NTS-PowerShell-raise-number-of-element-in-output.md) - 2023-03-01 **[DRAFT]**
+- [Note to self - PowerShell and user folders in Windows](content/posts/NTS-PowerShell_andUserFoldersinWindows.md) - 2023-03-01 **[DRAFT]**
+- [NTS Visualize Mail Headers](content/posts/NTS-visualize-mail-headers.md) - 2023-03-01 **[DRAFT]**
+- [SMTP server in node.js?](content/posts/SMTP-server-in-node_js.md) - 2020-12-01 **[DRAFT]**
+- [PowerShell script templates](content/posts/powershell-script-templates.md) - 2020-04-01 **[DRAFT]**
+- [Read, stupid...](content/posts/read-stupid.md) - 2019-12-01 **[DRAFT]**
+- [Curl is the best](content/posts/curl_is_the_best.md) - 2019-07-01 **[DRAFT]**
+- [Microsoft Message Analyze, netsh trace](content/posts/netsh-trace.md) - 2019-07-01 **[DRAFT]**
+- [Free online courses for Microsoft 365 and Azure / openedx.microsoft.com](content/posts/Free_openedx_courses_for_Microsoft365andAzure.md) - 2019-06-01 **[DRAFT]**
+- [PSCustomObject vs Select-Object with calculated properties](content/posts/PSCustomObject-vs-Select-Object with calculated properties.md) - 2019-06-01 **[DRAFT]**
+- [Test-GMERemoteX509Cert](content/posts/Test-GMERemoteX509Cert.md) - 2019-06-01 **[DRAFT]**
+- [list of easy to pronouce colors](content/posts/List-of-simple-to-pronounce-colors.md) - 2018-07-01 **[DRAFT]**
+- [openssl s_client vs gnutls vs keytool](content/posts/openssl_s_client_vs_gnutls_keytool.md) - 2018-07-01 **[DRAFT]**
+- [PowerShell resolveHostByName](content/posts/PowerShell-resolveHostByName.md) - 2018-07-01 **[DRAFT]**
+- [PowerShell and list of all DC in forrest](content/posts/PowerShell_and_List_of_All_DC_in_Forest.md) - 2018-07-01 **[DRAFT]**
+- [some useful Azure Shell 2.0 commands](content/posts/azure-shell-2-0-some-uefull-commands.md) - 2018-01-01 **[DRAFT]**
+- [GraphViz diagram base on PowerShell Test-NetConnection -Traceroute](content/posts/powershell-traceroute-usig-GraphViz.md) - 2018-01-01 **[DRAFT]**
+- [Simple e-mail testlab using Azure and iRedMail](content/posts/IRedMail-simple-mailserver.md) - 2017-12-01 **[DRAFT]**
+- [You're up and running!](content/posts/youre-up-and-running.md) - 2014-03-01

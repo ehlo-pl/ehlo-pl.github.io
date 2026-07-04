@@ -14,7 +14,7 @@ a message gets queued. That part is easy — it fits on a napkin.
 What I keep coming back to is everything *around* those four verbs: the split between the
 envelope and the message, the capability negotiation that happens right after `EHLO`, and
 the difference between a server that relays mail and one that merely accepts your
-submission. That is where the actual behaviour of an email system lives, and it is also
+submission. That is where the actual behavior of an email system lives, and it is also
 where most of the surprises hide. So this is SMTP beyond the napkin.
 
 The base protocol is [RFC 5321](https://www.rfc-editor.org/rfc/rfc5321.html); the message
@@ -65,7 +65,7 @@ Everything the client is allowed to do next — authenticate, start TLS, send 8-
 content, respect a size limit — is decided by that list. `SIZE`
 ([RFC 1870](https://www.rfc-editor.org/rfc/rfc1870.html)), `8BITMIME`
 ([RFC 6152](https://www.rfc-editor.org/rfc/rfc6152.html)) and `STARTTLS` are not
-decorations; they change what a correct client does. The last line uses `250 ` (space)
+decorations; they change what a correct client does. The last line uses `250` (space)
 instead of `250-` (dash) — that is how the client knows the capability list is finished.
 
 **The envelope is not the message.** `MAIL FROM` and `RCPT TO` are the *envelope* — that
