@@ -11,3 +11,7 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+
+# Python (toolkit scripts)
+__pycache__/
+*.py[cod]

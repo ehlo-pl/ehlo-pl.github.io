@@ -1,9 +1,10 @@
 # Table of Contents
 
+- [M365PSProfile](content/posts/M365PSProfile.md) - 2026-07-04 **[DRAFT]**
 - [Icewolf.EXO.SpamAnalyze](content/posts/Icewolf.EXO.SpamAnalyze.md) - 2026-07-04 **[DRAFT]**
 - [ExoGraphGUI](content/posts/ExoGraphGUI.md) - 2026-07-04 **[DRAFT]**
-- [GraphAPIAuditEvents](content/posts/GraphAPIAuditEvents.md) - 2026-07-04 **[DRAFT]**
 - [ExoHelper: Lightweight EXO Access Without ExchangeOnlineManagement](content/posts/EXO-bypass-ExchangeOnlineManagement.md) - 2026-07-04
+- [GraphAPIAuditEvents](content/posts/GraphAPIAuditEvents.md) - 2026-06-27 **[DRAFT]**
 - [SendEmail_at_rosettacode_org](content/posts/SendEmail_at_rosettacode_org.md) - 2026-02-07 **[DRAFT]**
 - [Freeipa and Postfix](content/posts/freeipa-and-postfix.md) - 2026-02-02 **[DRAFT]**
 - [JMAP Fundamentals](content/posts/2026-01-jmap-fundamentals.md) - 2026-01-25 **[DRAFT]**
