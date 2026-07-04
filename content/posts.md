@@ -1,4 +1,5 @@
 ---
-title: "Lista postów"
+title: "."
 type: "posts"
+hidden: true
 ---
