@@ -3,6 +3,7 @@ title = "You're up and running!"
 date = 2014-03-01T00:00:00Z
 draft = false
 description = "You're up and running!"
+aliases = ["/posts/2014-03-youre-up-and-running/"]
 +++
 
 
