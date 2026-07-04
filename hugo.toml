@@ -1,5 +1,5 @@
 baseURL = "https://blog.ehlo.pl/"  # Update with your domain
-languageCode = "en-us"
+locale = "en-us"
 title = "ehlo.pl - modern e-mail?"
 theme = "PaperMod"
 
