@@ -1,0 +1,58 @@
+<style>
+  table.post-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+  }
+  table.post-list th, table.post-list td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  table.post-list th {
+    background: #f5f5f5;
+    font-weight: 600;
+  }
+  table.post-list tr:hover {
+    background: #fafafa;
+  }
+  .status-draft {
+    color: #b33;
+    font-weight: bold;
+  }
+  .status-published {
+    color: #3a3;
+    font-weight: bold;
+  }
+</style>
+
+<h1>{{ .Title }}</h1>
+
+<table class="post-list">
+  <thead>
+    <tr>
+      <th>Tytuł</th>
+      <th>Data</th>
+      <th>Status</th>
+      <th>Słowa</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range sort (where .Site.RegularPages "Section" "posts") "Date" "desc" }}
+      <tr>
+        <td>{{ .Title }}</td>
+        <td>{{ .Date.Format "2006-01-02" }}</td>
+        <td>
+          {{ if .Draft }}
+            <span class="status-draft">draft</span>
+          {{ else }}
+            <span class="status-published">published</span>
+          {{ end }}
+        </td>
+        <td>{{ .WordCount }}</td>
+        <td><a href="{{ .RelPermalink }}">Otwórz</a></td>
+      </tr>
+    {{ end }}
+  </tbody>
+</table>
