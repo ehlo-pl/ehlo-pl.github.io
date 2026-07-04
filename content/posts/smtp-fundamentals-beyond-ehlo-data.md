@@ -14,7 +14,7 @@ a message gets queued. That part is easy — it fits on a napkin.
 What I keep coming back to is everything *around* those four verbs: the split between the
 envelope and the message, the capability negotiation that happens right after `EHLO`, and
 the difference between a server that relays mail and one that merely accepts your
-submission. That is where the actual behaviour of an email system lives, and it is also
+submission. That is where the actual behavior of an email system lives, and it is also
 where most of the surprises hide. So this is SMTP beyond the napkin.
 
 The base protocol is [RFC 5321](https://www.rfc-editor.org/rfc/rfc5321.html); the message
