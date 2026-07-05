@@ -32,7 +32,7 @@ this:
 
 ```kql
 GraphAPIAuditEvents
-| where TargetWorkload has "Exchange"
+| where TargetWorkload == "Microsoft.Exchange"
     or RequestUri startswith "/v1.0/users"
     or RequestUri has "mail"
     or RequestUri has "messages"
@@ -40,10 +40,6 @@ GraphAPIAuditEvents
 | summarize Count = count() by ApplicationId
 | sort by Count desc
 ```
-
-> **Note:** the workload lives in the `TargetWorkload` column and its value is the full
-> `Microsoft.Exchange`, so filter with `has "Exchange"` - a plain `== "Exchange"` matches
-> nothing.
 
 Sometimes it's necessary to verify permissions instead:
 
@@ -85,9 +81,6 @@ GraphAPIAuditEvents
 | sort by Timestamp desc
 ```
 
-> **NEEDS YOUR LAB:** a sample result table (or screenshot) of the app-ID summary from your
-> own tenant, so readers see what the output actually looks like.
-
 ## Obstacles
 
 There are a few obstacles in this method of investigation - the ones typical for real-life
@@ -107,5 +100,7 @@ KQL sessions:
 ## References
 
 - [GraphApiAuditEvents table in the advanced hunting schema](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-graphapiauditevents-table)
+- [GraphApiAuditEvents: The new Graph API Logs](https://kqlquery.com/posts/graphapiauditevents/) by [Bert-Jan Pals](https://www.linkedin.com/in/bert-janpals/)
+ 2025-08-19
 - [Advanced hunting query best practices](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-best-practices)
 - [Advanced hunting portal](https://security.microsoft.com/v2/advanced-hunting)
