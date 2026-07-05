@@ -1,6 +1,6 @@
 +++
 date = '2026-06-27T13:33:31+02:00'
-draft = true
+draft = false
 title = 'Hunting Graph API access to Exchange with GraphAPIAuditEvents'
 description = "Hunting which apps access Exchange mailboxes over Graph API using the GraphAPIAuditEvents advanced-hunting table in Microsoft Defender."
 tags = ["graph-api", "exchange-online", "microsoft-365", "defender-xdr", "advanced-hunting", "kql"]
