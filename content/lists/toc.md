@@ -1,5 +1,6 @@
 # Table of Contents
 
+- [Microsoft Graph API and Eventual Consistency](content/posts/Microsoft_Graph_API_and_eventual_consistency.md) - 2026-07-07 **[DRAFT]**
 - [M365PSProfile](content/posts/M365PSProfile.md) - 2026-07-04 **[DRAFT]**
 - [Icewolf.EXO.SpamAnalyze](content/posts/Icewolf.EXO.SpamAnalyze.md) - 2026-07-04 **[DRAFT]**
 - [ExoGraphGUI](content/posts/ExoGraphGUI.md) - 2026-07-04 **[DRAFT]**
