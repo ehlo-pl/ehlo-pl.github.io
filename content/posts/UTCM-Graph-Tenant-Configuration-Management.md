@@ -1,7 +1,7 @@
 +++
 title = 'Microsoft Graph Unified Tenant Configuration Management (UTCM): Snapshots, Monitors and Drift'
 date = '2026-09-26T10:00:00+02:00'
-draft = true
+draft = false
 description = "First look at Microsoft Graph Tenant Configuration Management APIs (UTCM): snapshots, configurationMonitors and configuration drift across Exchange Online, Entra, Teams, Intune and more"
 tags = ["microsoft-graph", "utcm", "tcm", "microsoft-365", "exchange-online", "entra-id", "powershell", "configuration-drift"]
 categories = ["PowerShell"]
@@ -9,7 +9,7 @@ categories = ["PowerShell"]
 
 ## The Discovery
 
-I noticed a new endpoint in Microsoft Graph that I had not seen before:
+I noticed a new endpoint in Microsoft Graph that I had not seen before (it was only in beta :)):
 
 ```
 https://graph.microsoft.com/v1.0/admin/configurationManagement/configurationMonitors
@@ -250,3 +250,4 @@ I like the direction. Mail-flow configuration is exactly the kind of thing that 
 - [ElliottLW/IaC-UTCM on GitHub](https://github.com/ElliottLW/IaC-UTCM)
 - [EasyTCM 0.5.0 on PowerShell Gallery](https://www.powershellgallery.com/packages/EasyTCM/0.5.0)
 - [UTCM 0.1.1 on PowerShell Gallery](https://www.powershellgallery.com/packages/UTCM/0.1.1)
+- [compete366: UTCM](https://www.compete366.com/blog-posts/microsoft-tenant-configuration-management/)
