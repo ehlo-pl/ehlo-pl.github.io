@@ -131,7 +131,6 @@ options:
 The first one is the better choice. And in fact this failure is useful information: if curl
 can't reach the CRL, probably some other client can't too.
 
-
 ## Some Examples
 
 My original note had only this:
@@ -167,8 +166,6 @@ curl.exe -v --connect-to mail.contoso.com:443:10.0.0.21:443 https://mail.contoso
 From the man page: `--connect-to` "does NOT affect the hostname/port number that is used for
 TLS/SSL (e.g. SNI, certificate verification)". So the certificate is verified against
 `mail.contoso.com`, but the TCP connection goes to `10.0.0.21`.
-
- 
 
 ## Why This Matters
 
