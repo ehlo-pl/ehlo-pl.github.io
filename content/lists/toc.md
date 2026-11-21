@@ -1,6 +1,8 @@
 # Table of Contents
 
-- [Microsoft Graph API and Eventual Consistency](content/posts/Microsoft_Graph_API_and_eventual_consistency.md) - 2026-07-07 **[DRAFT]**
+- [Microsoft Graph Unified Tenant Configuration Management (UTCM): Snapshots, Monitors and Drift](content/posts/UTCM-Graph-Tenant-Configuration-Management.md) - 2026-09-26
+- [Logparser.exe_in_2026](content/posts/logparser.exe_in_2026.md) - 2026-07-28 **[DRAFT]**
+- [Microsoft Graph API and Eventual Consistency](content/posts/MSGraphAPI_and_eventual_consistency.md) - 2026-07-07 **[DRAFT]**
 - [M365PSProfile](content/posts/M365PSProfile.md) - 2026-07-04 **[DRAFT]**
 - [Icewolf.EXO.SpamAnalyze](content/posts/Icewolf.EXO.SpamAnalyze.md) - 2026-07-04 **[DRAFT]**
 - [ExoGraphGUI](content/posts/ExoGraphGUI.md) - 2026-07-04 **[DRAFT]**
