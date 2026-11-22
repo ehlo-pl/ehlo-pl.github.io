@@ -16,7 +16,7 @@ The project describes itself like this:
 
 > One server for your email, calendars, contacts and shared files, with spam and phishing protection built in. Every standard protocol your clients already speak (JMAP, IMAP, POP3, SMTP, CalDAV, CardDAV and WebDAV) supported natively.
 
-For someone who has spent most of his career with Exchange Server - where "a mail server" means several roles, Active Directory, IIS, a database engine and a pile of prerequisites - a single Rust binary claiming to do all of that is worth a closer look.
+As someone who has spent most of my career with Exchange Server - where "a mail server" means several roles, Active Directory, IIS, a database engine and a pile of prerequisites - I find a single Rust binary claiming to do all of that worth a closer look.
 
 ## Sovereignty
 
@@ -64,15 +64,15 @@ The price is real, though, and worth stating clearly:
 
 ### Identity: internal now, Keycloak maybe later
 
-The "own IAM layer" is, for now, simply Stalwart's internal directory. I also looked at Keycloak as an OIDC identity provider, mostly for SSO, central user management and to learn Keycloak itself. On paper it works, but the consequences are significant: Stalwart becomes a resource server that only validates tokens, mail clients have to log in with OAuth (`OAUTHBEARER`/`XOAUTH2`), accounts appear only at the first sign-in, disabling a user in Keycloak does not disable the mailbox, and the built-in 2FA, passkeys and self-service password change are gone. Plus a JVM and another PostgreSQL on a 4 GB VPS. This stays a proposal until I test my actual mail clients against it in a lab.
+Identity is, for now, simply Stalwart's internal directory. I also looked at Keycloak as an OIDC identity provider, mostly for SSO, central user management and to learn Keycloak itself. On paper it works, but the consequences are significant: Stalwart becomes a resource server that only validates tokens, mail clients have to log in with OAuth (`OAUTHBEARER`/`XOAUTH2`), accounts appear only at the first sign-in, disabling a user in Keycloak does not disable the mailbox, and the built-in 2FA, passkeys and self-service password change are gone. Plus a JVM and another PostgreSQL on a 4 GB VPS. This stays a proposal until I test my actual mail clients against it in a lab.
 
 ### Extras
 
-Because it was fun: **Bulwark Lite** webmail, which Stalwart serves itself as an *Application* (no extra container - Stalwart downloads and unpacks the bundle), and a separate **root-fr JMAP webmail** container on its own subdomain, talking to Stalwart's `/jmap` directly from the browser. That one needed CORS for a single origin, which I did in Traefik rather than enabling Stalwart's permissive CORS.
+Because it was fun, I also added **Bulwark Lite** webmail, which Stalwart serves itself as an *Application* (no extra container - Stalwart downloads and unpacks the bundle), and a separate **root-fr JMAP webmail** container on its own subdomain, talking to Stalwart's `/jmap` directly from the browser. That one needed CORS for a single origin, which I did in Traefik rather than enabling Stalwart's permissive CORS.
 
 ## First Impressions vs Exchange Server
 
-I spent about two hours on installation and an hour and a half on testing. Here is what stayed with me.
+Here is what stayed with me.
 
 ### What feels good
 
@@ -96,7 +96,7 @@ Not everything was smooth. Things I actually hit on the server:
 ### What I miss coming from Exchange
 
 - **The Outlook experience.** No MAPI/EWS/ActiveSync means Outlook as an IMAP client, without the rich calendar sharing, delegation and free/busy that users take for granted. For clarity - I do not need Outlook itself. Rather, I need a real desktop client with full capabilities: an offline cache (like Outlook's Cached Exchange Mode) and a fully configurable interface.
-- **A mature operational ecosystem.** There is a WebUI, an API and a CLI, but nothing like the depth of Exchange's cmdlets, message tracking, or the decades of community knowledge. Monitoring is also still on my to-do list - right now I have none but provided on enterprise trial license.
+- **A mature operational ecosystem.** There is a WebUI, an API and a CLI, but nothing like the depth of Exchange's cmdlets, message tracking, or the decades of community knowledge. Monitoring is still on my to-do list: nothing external yet, only what the Enterprise trial license provides.
 - **A perimeter layer.** Built-in filtering is convenient in a lab, but in an enterprise I would not let internet traffic land directly on the server that holds user data. That means something Edge-like in front (an inbound relay or filtering gateway), or rethinking the whole approach.
 - **Identity policies.** I still need to learn how Conditional Access-style policies work in viable Entra ID alternatives.
 - **Hybrid and coexistence tooling.** There is no migration story comparable to Exchange hybrid; moving mailboxes means IMAP/JMAP-level tooling.
