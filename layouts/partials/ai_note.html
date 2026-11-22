@@ -1,0 +1,10 @@
+{{- /* ehlo.pl: AI-assistance note, rendered at the end of every post (layouts/_default/single.html).
+     Defaults in hugo.toml [params]: aiAssisted, aiTool, aiScope, aiPolicy. Per-post override in front matter. */ -}}
+{{- if .Param "aiAssisted" -}}
+<aside class="ai-note" role="note">
+  <p>Topic, lab work and experiences in this post are mine, and I take full responsibility for its content.
+  I worked with {{ .Param "aiTool" }} on {{ delimit (.Param "aiScope") ", " " and " }};
+  I review and fact-check everything before publishing. Spotted a mistake? It's mine &ndash; let me know.
+  <a href="{{ .Param "aiPolicy" | relURL }}">How I use AI on this blog</a>.</p>
+</aside>
+{{- end -}}

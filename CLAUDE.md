@@ -30,7 +30,7 @@ Post toolkit (stdlib-only Python, resolves paths to repo root, run from anywhere
 
 ## Deployment
 
-`.github/workflows/deploy.yml`: push to `main` → build with Hugo extended → publish `public/`
+`.github/workflows/deploy.yml`: push to `main` → build with Hugo extended (pinned to `0.170.1`; bump deliberately and test locally) → publish `public/`
 to GitHub Pages via `peaceiris/actions-gh-pages` (`cname: blog.ehlo.pl`). Only `main` deploys;
 feature branches do not. Work happens on feature branches (e.g. `feature/YYYYMMDD.N`).
 
@@ -63,3 +63,29 @@ Source of truth for anything content-related: `.claude/skills/expand-post/SKILL.
 ## Environment
 
 Primary shell is PowerShell on Windows; the working tree lives under a OneDrive-synced path.
+
+## AI-assistance notice
+
+Every post shows an *AI-assisted* badge in the post meta and a closing note (topics and experience
+are the author's, AI helped with writing; the author takes responsibility). Policy page: `content/ai.md`.
+
+- Defaults live in `hugo.toml` `[params]`: `aiAssisted`, `aiTool`, `aiScope`, `aiPolicy`. Do **not** add
+  these to every post; set them in front matter only for exceptions (`aiAssisted = false`, or a narrower
+  `aiScope = ["editing"]`). They are outside the six-field schema on purpose.
+- AI-generated illustrations get a caption saying so (`figure` shortcode, `caption="Illustration: AI-generated, …"`).
+
+## Theme overrides
+
+PaperMod stays read-only; these files in `layouts/` are copies of theme files with local changes.
+When the submodule is updated, diff each against `themes/PaperMod/layouts/…` and re-apply the change.
+
+| File | Local change |
+|---|---|
+| `_default/baseof.html` | `.Language.Direction` (newer Hugo API) |
+| `_default/rss.xml` | `.Language.Locale`; AI-assisted note in item `<description>` |
+| `partials/templates/opengraph.html` | `.Language.Locale` |
+| `_default/single.html` | `partial "ai_note.html"` after the post content |
+| `partials/post_meta.html` | *AI-assisted* badge |
+
+New files (not copies): `partials/ai_note.html`, `partials/extend_head.html` (theme hook, `ai-assisted`
+meta tag), `assets/css/extended/ai-note.css`, `lposts/single.html`.

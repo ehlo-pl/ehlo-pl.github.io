@@ -6,6 +6,14 @@ theme = "PaperMod"
 [params]
   author = "Ziemek Borowski"
   description = "my (and borrowed) random comments and discoveries"
+  # AI-assistance notice on every post (badge in post meta + note at the end).
+  # Override per post in front matter only for exceptions:
+  #   aiAssisted = false        -> post written without AI
+  #   aiScope = ["editing"]     -> narrower AI involvement
+  aiAssisted = true
+  aiTool = "Claude (Anthropic)"
+  aiScope = ["drafting", "editing", "illustrations"]
+  aiPolicy = "/ai/"
 
 [outputs]
   home = ["HTML", "JSON"]  # Generates search index

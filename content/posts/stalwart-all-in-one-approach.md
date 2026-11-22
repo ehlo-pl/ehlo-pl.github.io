@@ -125,6 +125,7 @@ My first impression after a week: Stalwart is the most complete open-source "Exc
 
 - [Self-hosted Stalwart email server](https://gist.github.com/chripede/99b7eaa1101ee05cc64a59b46e4d299f) — chripede, GitHub Gist (Docker Compose, reverse proxy, Roundcube, Tailscale)
 - [Stalwart mail server setup](https://mylinux.work/guides/stalwart-mail-server-setup/) — mylinux.work
+- [Mark Falk # Step 7 - Configure Stalwart](https://markfalk.github.io/docs/self-hosting-mail/config-stalwart)
 - [Stalwart on NixOS](https://wiki.nixos.org/wiki/Stalwart) — NixOS Wiki (yes, NixOS is an interesting direction)
 
 **Stalwart documentation**

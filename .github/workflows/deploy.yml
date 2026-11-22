@@ -39,7 +39,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: latest
+          hugo-version: "0.170.1"  # pinned: site verified on this version; bump deliberately
           extended: true
           
       # Step 4: Build site with verbose output for debugging
