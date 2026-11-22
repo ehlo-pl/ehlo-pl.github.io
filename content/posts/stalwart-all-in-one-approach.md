@@ -1,7 +1,7 @@
 +++
 title = "Stalwart Mail Server: The All-in-One Approach"
 date = 2026-11-22T00:00:00Z
-draft = true
+draft = false
 tags = ["stalwart", "rust", "imap", "jmap", "smtp", "caldav", "carddav", "podman", "traefik", "rocksdb", "week-15"]
 categories = ["Modern Solutions"]
 description = "Written in Rust, all-in-one server with IMAP, JMAP, SMTP, CalDAV, and CardDAV support - first deployment and first impressions from an Exchange guy"
@@ -16,7 +16,7 @@ The project describes itself like this:
 
 > One server for your email, calendars, contacts and shared files, with spam and phishing protection built in. Every standard protocol your clients already speak (JMAP, IMAP, POP3, SMTP, CalDAV, CardDAV and WebDAV) supported natively.
 
-As someone who has spent most of my career with Exchange Server - where "a mail server" means several roles, Active Directory, IIS, a database engine and a pile of prerequisites - I find a single Rust binary claiming to do all of that worth a closer look.
+As someone who has spent most of my career with Exchange Server - where "a mail server" means several roles, Active Directory, IIS, a database engine and a pile of prerequisites - I find a single Rust binary claiming to do all of that worth a closer look. Even I'm nearly sure that it's ambitious task.
 
 ## Sovereignty
 
@@ -114,21 +114,21 @@ My first impression after a week: Stalwart is the most complete open-source "Exc
 
 ## References
 
-**Talks and articles**
+### Talks and articles
 
 - [Stalwart: Can Open Source do Gmail-scale Email?](https://archive.fosdem.org/2026/schedule/event/FP8EFX-scaling-email/) — Mauro De Gennaro, FOSDEM 2026, Modern Email devroom
+
+### How-to guides
+
 - [Stalwart Mail Server Setup Guide: The Rust Alternative](https://mailflowauthority.com/self-hosted-smtp/stalwart-setup-guide) — Braedon, Mailflow Authority
 - [Stalwart: an all-in-one mail server on a VPS](https://www.ssdnodes.com/learn/stalwart-mail-server-on-a-vps) — [Matt Connor](https://www.ssdnodes.com/learn/about), SSD Nodes
 - [Stalwart Mail Server Setup Guide (2026): Ports, SMTP Relay, Cloudflare & Mailcow](https://ecn-apps.com/pages/articles/stalwart-mail-server-guide.html) — ECN-APPS
-
-**How-to guides**
-
 - [Self-hosted Stalwart email server](https://gist.github.com/chripede/99b7eaa1101ee05cc64a59b46e4d299f) — chripede, GitHub Gist (Docker Compose, reverse proxy, Roundcube, Tailscale)
 - [Stalwart mail server setup](https://mylinux.work/guides/stalwart-mail-server-setup/) — mylinux.work
 - [Mark Falk # Step 7 - Configure Stalwart](https://markfalk.github.io/docs/self-hosting-mail/config-stalwart)
 - [Stalwart on NixOS](https://wiki.nixos.org/wiki/Stalwart) — NixOS Wiki (yes, NixOS is an interesting direction)
 
-**Stalwart documentation**
+### Stalwart documentation
 
 - [Installation](https://stalw.art/docs/install/) and [system requirements](https://stalw.art/docs/install/requirements/)
 - [Docker / container platform](https://stalw.art/docs/install/platform/docker/)
@@ -139,18 +139,18 @@ My first impression after a week: Stalwart is the most complete open-source "Exc
 - [Authentication backends overview](https://stalw.art/docs/auth/backend/overview/), [internal directory](https://stalw.art/docs/auth/backend/internal/) and [OIDC directory](https://stalw.art/docs/auth/backend/oidc/) — the Keycloak trade-offs
 - [OAuth for mail clients](https://stalw.art/docs/auth/oauth/mail-clients/) and [Stalwart as an OpenID Connect provider](https://stalw.art/docs/auth/oauth/openid-connect/)
 
-**Stalwart Enterprise add-ons**
+## Stalwart Enterprise add-ons
 
 - [Compliance](https://www.stalw.art/compliance/) and [Lawful Interception](https://www.stalw.art/lawful-interception/)
 
-**Protocols**
+### Protocols
 
 - [RFC 8620 — The JSON Meta Application Protocol (JMAP)](https://www.rfc-editor.org/rfc/rfc8620.html) and [RFC 8621 — JMAP for Mail](https://www.rfc-editor.org/rfc/rfc8621.html)
 - [RFC 4791 — CalDAV](https://www.rfc-editor.org/rfc/rfc4791.html) and [RFC 6352 — CardDAV](https://www.rfc-editor.org/rfc/rfc6352.html)
 - [RFC 5228 — Sieve](https://www.rfc-editor.org/rfc/rfc5228.html) and [RFC 5804 — ManageSieve](https://www.rfc-editor.org/rfc/rfc5804.html)
 - [RFC 8461 — SMTP MTA Strict Transport Security (MTA-STS)](https://www.rfc-editor.org/rfc/rfc8461.html) and [RFC 8460 — SMTP TLS Reporting](https://www.rfc-editor.org/rfc/rfc8460.html)
 
-**Other components used in the lab**
+### Other components used in the lab
 
 - [Podman Quadlet — `podman-systemd.unit(5)`](https://docs.podman.io/en/latest/markdown/podman-systemd.unit.5.html)
 - [Traefik Proxy documentation](https://doc.traefik.io/traefik/)
@@ -158,6 +158,6 @@ My first impression after a week: Stalwart is the most complete open-source "Exc
 - [root-fr/jmap-webmail](https://github.com/root-fr/jmap-webmail) — standalone JMAP webmail
 - [Keycloak](https://www.keycloak.org/) — considered as identity provider, not deployed
 
-**To explore**
+### To explore
 
 - [stalwart-mta-hook-types](https://github.com/enaut/stalwart-mta-hook-types) — Rust types for writing Stalwart MTA hooks (not deployed yet, looks interesting)

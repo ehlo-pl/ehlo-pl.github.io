@@ -1,16 +1,18 @@
 # Table of Contents
 
+- [Stalwart Mail Server: The All-in-One Approach](content/posts/stalwart-all-in-one-approach.md) - 2026-11-22 **[DRAFT]**
 - [Microsoft Graph Unified Tenant Configuration Management (UTCM): Snapshots, Monitors and Drift](content/posts/UTCM-Graph-Tenant-Configuration-Management.md) - 2026-09-26
+- [The Email Revolution: Why You Should Transition to JMAP and How to Plan Its Implementation](content/posts/jmap-why-transition.md) - 2026-09-15 **[DRAFT]**
 - [Logparser.exe_in_2026](content/posts/logparser.exe_in_2026.md) - 2026-07-28 **[DRAFT]**
 - [Microsoft Graph API and Eventual Consistency](content/posts/MSGraphAPI_and_eventual_consistency.md) - 2026-07-07 **[DRAFT]**
 - [M365PSProfile](content/posts/M365PSProfile.md) - 2026-07-04 **[DRAFT]**
 - [Icewolf.EXO.SpamAnalyze](content/posts/Icewolf.EXO.SpamAnalyze.md) - 2026-07-04 **[DRAFT]**
 - [ExoGraphGUI](content/posts/ExoGraphGUI.md) - 2026-07-04 **[DRAFT]**
 - [ExoHelper: Lightweight EXO Access Without ExchangeOnlineManagement](content/posts/EXO-bypass-ExchangeOnlineManagement.md) - 2026-07-04
-- [Hunting Graph API access to Exchange with GraphAPIAuditEvents](content/posts/GraphAPIAuditEvents.md) - 2026-06-27 **[DRAFT]**
+- [Hunting Graph API access to Exchange with GraphAPIAuditEvents](content/posts/GraphAPIAuditEvents.md) - 2026-06-27
+- [JMAP practical fundamentals](content/posts/jmap-basic-intro.md) - 2026-06-25
 - [SendEmail_at_rosettacode_org](content/posts/SendEmail_at_rosettacode_org.md) - 2026-02-07 **[DRAFT]**
-- [Freeipa and Postfix](content/posts/freeipa-and-postfix.md) - 2026-02-02 **[DRAFT]**
-- [JMAP Fundamentals](content/posts/jmap-fundamentals.md) - 2026-01-25 **[DRAFT]**
+- [Freeipa and Postfix](content/posts/freeipa-and-postfix.md) - 2026-02-02
 - [HVE](content/posts/hve.md) - 2026-01-01 **[DRAFT]**
 - [Where Email Is Heading: JMAP Adoption, Interoperability, and Your Next Project](content/posts/where-email-is-heading.md) - 2025-08-25 **[DRAFT]**
 - [Email Books Worth Reading: Fundamentals Beyond Technical Docs](content/posts/email-books-worth-reading.md) - 2025-08-18 **[DRAFT]**
@@ -27,7 +29,6 @@
 - [ZoneMTA: High-Performance Outbound Delivery](content/posts/zonemta-high-performance-outbound.md) - 2025-06-02 **[DRAFT]**
 - [Haraka: The Mail Server Microservice](content/posts/haraka-mail-server-microservice.md) - 2025-05-26 **[DRAFT]**
 - [Stalwart Deep-Dive: JMAP in Production](content/posts/stalwart-jmap-in-production.md) - 2025-05-19 **[DRAFT]**
-- [Stalwart Mail Server: The All-in-One Approach](content/posts/stalwart-all-in-one-approach.md) - 2025-05-12 **[DRAFT]**
 - [WildDuck Part 2: Users, Accounts, and Real Mail](content/posts/wildduck-part2-users-accounts-real-mail.md) - 2025-05-05 **[DRAFT]**
 - [WildDuck Email Server Part 1: Architecture & Installation](content/posts/wildduck-part1-architecture-installation.md) - 2025-04-28 **[DRAFT]**
 - [Postfix + Brevo: Enterprise Relay Integration](content/posts/postfix-brevo-enterprise-relay.md) - 2025-04-21 **[DRAFT]**
@@ -55,7 +56,7 @@
 - [NTS DNSSEC](content/posts/NTS-DNSSEC.md) - 2023-04-01 **[DRAFT]**
 - [Note to Self - Mail Sender Authentication Protocols, and an Overview of SPF, DKIM, DMARC and others](content/posts/NTS-Mail-Sender-Auth-protocols.md) - 2023-04-01 **[DRAFT]**
 - [Note to self - SPF - \](content/posts/NTS-SPF.md) - 2023-04-01 **[DRAFT]**
-- [Emonji in linkedin takline](content/posts/Emonji-in-LinkedIn.md) - 2023-03-01 **[DRAFT]**
+- [Emonji in linkedin takline](content/posts/Emonji-in-LinkedIn.md) - 2023-03-01
 - [Nff How_To_Recover_User_Emails_In_Microsoft_365](content/posts/NfF-How_to_recover_user_emails_in_Microsoft_365.md) - 2023-03-01 **[DRAFT]**
 - [Nff Userphoneonexo](content/posts/NfF-UserPhoneonExo.md) - 2023-03-01 **[DRAFT]**
 - [NTS DNS_Lookingglasses](content/posts/NTS-DNS_LookingGlasses.md) - 2023-03-01 **[DRAFT]**
@@ -67,12 +68,11 @@
 - [SMTP server in node.js?](content/posts/SMTP-server-in-node_js.md) - 2020-12-01 **[DRAFT]**
 - [PowerShell script templates](content/posts/powershell-script-templates.md) - 2020-04-01 **[DRAFT]**
 - [Read, stupid...](content/posts/read-stupid.md) - 2019-12-01 **[DRAFT]**
-- [Curl is the best](content/posts/curl_is_the_best.md) - 2019-07-01 **[DRAFT]**
+- [Curl is the best (also on Windows)](content/posts/curl_is_the_best.md) - 2019-07-01
 - [Microsoft Message Analyze, netsh trace](content/posts/netsh-trace.md) - 2019-07-01 **[DRAFT]**
-- [Free online courses for Microsoft 365 and Azure / openedx.microsoft.com](content/posts/Free_openedx_courses_for_Microsoft365andAzure.md) - 2019-06-01 **[DRAFT]**
 - [PSCustomObject vs Select-Object with calculated properties](content/posts/PSCustomObject-vs-Select-Object with calculated properties.md) - 2019-06-01 **[DRAFT]**
 - [Test-GMERemoteX509Cert](content/posts/Test-GMERemoteX509Cert.md) - 2019-06-01 **[DRAFT]**
-- [list of easy to pronouce colors](content/posts/List-of-simple-to-pronounce-colors.md) - 2018-07-01 **[DRAFT]**
+- [list of easy to pronounce colors](content/posts/List-of-simple-to-pronounce-colors.md) - 2018-07-01 **[DRAFT]**
 - [openssl s_client vs gnutls vs keytool](content/posts/openssl_s_client_vs_gnutls_keytool.md) - 2018-07-01 **[DRAFT]**
 - [PowerShell resolveHostByName](content/posts/PowerShell-resolveHostByName.md) - 2018-07-01 **[DRAFT]**
 - [PowerShell and list of all DC in forrest](content/posts/PowerShell_and_List_of_All_DC_in_Forest.md) - 2018-07-01 **[DRAFT]**
