@@ -48,9 +48,7 @@ curl.exe --version
 
 The first line shows the curl version and the TLS library it was built with (Schannel or
 OpenSSL).
-
-> **NEEDS YOUR LAB:** `curl.exe --version` output from a Windows box with the in-box curl,
-> and if possible the same from the curl.se build, to show the Schannel vs OpenSSL difference.
+ 
 
 ### PowerShell trap: `curl` is not curl
 
