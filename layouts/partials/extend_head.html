@@ -1,0 +1,4 @@
+{{- /* ehlo.pl: informational meta tag for AI-assisted posts (no formal standard behind it) */ -}}
+{{- if and .IsPage (eq .Section "posts") (.Param "aiAssisted") }}
+<meta name="ai-assisted" content="{{ delimit (.Param "aiScope") ", " }}">
+{{- end }}

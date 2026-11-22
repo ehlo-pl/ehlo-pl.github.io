@@ -28,6 +28,8 @@ categories = ["PowerShell"]
   tag; keep it.
 - `categories` — the broad bucket (e.g. `"Classical Protocols"`, `"PowerShell"`).
 - Leave `draft = true` — the author flips it when they publish.
+- Do not add `aiAssisted` / `aiScope` — the AI-assistance notice is global (`hugo.toml`);
+  only the author sets them, and only for exceptions. See `CLAUDE.md`.
 
 ## Section arc
 

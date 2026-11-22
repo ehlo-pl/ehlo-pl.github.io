@@ -15,3 +15,6 @@ Thumbs.db
 # Python (toolkit scripts)
 __pycache__/
 *.py[cod]
+
+# Hugo build lock
+.hugo_build.lock
