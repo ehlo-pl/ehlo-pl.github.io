@@ -1,7 +1,7 @@
 +++
 title = "Emonji in linkedin takline"
 date = 2023-03-01T00:00:00Z
-draft = true
+draft = false
 description = "Emonji in linkedin takline"
 +++
 
@@ -36,7 +36,4 @@ Click on the Save button.
 I hope this helps! Let me know if you have any other questions.
 
 Received message. You can add emojis or symbols to your LinkedIn headline by copying and pasting them from a website that provides Unicode characters such as **unicode-table.com** or **getemoji.com**. You can also use the Windows key + period (.) or Windows key + semicolon (;) shortcut to open the emoji panel and select the emoji you want to use. Here are the steps to add an emoji to your LinkedIn profile using copy and paste: 1. Go to a website that provides Unicode characters such as **unicode-table.com** or **getemoji.com**. 2. Select the emoji you want to use and copy it. 3. Go to your LinkedIn profile and click on the **Edit profile** button. 4. Click on the **pencil icon** next to your headline. 5. Paste the emoji into your headline. 6. Click on the **Save** button. I hope this helps! Let me know if you have any other questions.
-Learn more:
-1. linkedin.com
-2. linkedin.com
-3. linkedin.com
+ 

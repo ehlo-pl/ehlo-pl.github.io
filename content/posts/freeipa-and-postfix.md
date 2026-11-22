@@ -1,10 +1,10 @@
 +++
 date = '2026-02-02T11:40:27+01:00'
-draft = true
+draft = false
 title = 'Freeipa and Postfix'
 +++
 
-Since your machine is already a FreeIPA client with SSSD running, you have a massive head start. Instead of making Postfix and Dovecot talk directly to LDAP (which is a headache with BIND DNs and complex filters), the "clean" way is to leverage **SSSD**.
+Since your machine is already a FreeIPA client with SSSD running, I had a massive head start. Instead of making Postfix and Dovecot talk directly to LDAP (which is a headache with BIND DNs and complex filters), the "clean" way is to leverage **SSSD**.
 
 SSSD handles the caching, offline credentials, and the heavy lifting of LDAP lookups. Here is how to wire them up.
 
@@ -111,5 +111,3 @@ Since you are likely on a RHEL/Fedora-based system (given FreeIPA), SELinux migh
 ### The "Pro" Step: Kerberos
 
 Since you're in a FreeIPA environment, you can actually enable **GSSAPI** (Kerberos) for Dovecot and Postfix. This allows users with a valid `kinit` ticket to log into their email without typing a password.
-
-**Would you like me to provide the specific GSSAPI/Keytab configuration steps for Dovecot to enable passwordless Kerberos login?**
