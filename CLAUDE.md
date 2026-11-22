@@ -30,8 +30,11 @@ Post toolkit (stdlib-only Python, resolves paths to repo root, run from anywhere
 
 ## Deployment
 
-`.github/workflows/deploy.yml`: push to `main` → build with Hugo extended (pinned to `0.170.1`; bump deliberately and test locally) → publish `public/`
-to GitHub Pages via `peaceiris/actions-gh-pages` (`cname: blog.ehlo.pl`). Only `main` deploys;
+`.github/workflows/deploy.yml`: push to `main` → download Hugo extended (pinned `HUGO_VERSION`, sha256-checked;
+bump deliberately and test locally) → `actions/configure-pages` (step id `pages`) supplies the base URL →
+`hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}"` → `upload-pages-artifact` + `deploy-pages`.
+Custom domain from `static/CNAME`. **Never drop the `Setup Pages` step**: without it the base URL is empty and
+every link points to `example.org`. Only `main` deploys;
 feature branches do not. Work happens on feature branches (e.g. `feature/YYYYMMDD.N`).
 
 ## Content architecture
