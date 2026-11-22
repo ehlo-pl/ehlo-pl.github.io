@@ -1,6 +1,7 @@
 # Table of Contents
 
-- [Stalwart Mail Server: The All-in-One Approach](content/posts/stalwart-all-in-one-approach.md) - 2026-11-22 **[DRAFT]**
+- [The Lifecycle of an Exchange Online Application: From App Registration to Soft Delete](content/posts/exo-app-lifecycle-graph.md) - 2026-11-22 **[DRAFT]**
+- [Stalwart Mail Server: The All-in-One Approach](content/posts/stalwart-all-in-one-approach.md) - 2026-11-22
 - [Microsoft Graph Unified Tenant Configuration Management (UTCM): Snapshots, Monitors and Drift](content/posts/UTCM-Graph-Tenant-Configuration-Management.md) - 2026-09-26
 - [The Email Revolution: Why You Should Transition to JMAP and How to Plan Its Implementation](content/posts/jmap-why-transition.md) - 2026-09-15 **[DRAFT]**
 - [Logparser.exe_in_2026](content/posts/logparser.exe_in_2026.md) - 2026-07-28 **[DRAFT]**
@@ -72,7 +73,7 @@
 - [Microsoft Message Analyze, netsh trace](content/posts/netsh-trace.md) - 2019-07-01 **[DRAFT]**
 - [PSCustomObject vs Select-Object with calculated properties](content/posts/PSCustomObject-vs-Select-Object with calculated properties.md) - 2019-06-01 **[DRAFT]**
 - [Test-GMERemoteX509Cert](content/posts/Test-GMERemoteX509Cert.md) - 2019-06-01 **[DRAFT]**
-- [list of easy to pronounce colors](content/posts/List-of-simple-to-pronounce-colors.md) - 2018-07-01 **[DRAFT]**
+- [list of easy to pronouce colors](content/posts/List-of-simple-to-pronounce-colors.md) - 2018-07-01 **[DRAFT]**
 - [openssl s_client vs gnutls vs keytool](content/posts/openssl_s_client_vs_gnutls_keytool.md) - 2018-07-01 **[DRAFT]**
 - [PowerShell resolveHostByName](content/posts/PowerShell-resolveHostByName.md) - 2018-07-01 **[DRAFT]**
 - [PowerShell and list of all DC in forrest](content/posts/PowerShell_and_List_of_All_DC_in_Forest.md) - 2018-07-01 **[DRAFT]**

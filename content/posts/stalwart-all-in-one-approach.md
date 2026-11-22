@@ -110,6 +110,19 @@ Still to do before I would call it "tested": a real restore from the nightly bac
 
 My first impression after a week: Stalwart is the most complete open-source "Exchange-shaped" server I have touched - a mail, calendar and contacts server in one process, with modern mail security built in, and a design that makes sense. It is not an Exchange replacement for an enterprise yet - mostly because of the client side and the operational ecosystem - but for the sovereignty question it is a very serious answer.
 
+### Pros and cons at a glance
+
+| | Topic | Notes |
+|---|---|---|
+| **Pro** | Low resource use | Default memory limits add up to about 2.4 GiB, and an idle server stays well below them; my whole lab (Stalwart plus Traefik) runs on a 4 GB VPS. For comparison, mailcow documents a minimum of 6 GiB RAM plus 1 GiB swap. |
+| **Pro** | All-in-one architecture | SMTP, IMAP, JMAP, CalDAV/CardDAV, a spam filter (Bayesian plus DNSBL) and the web admin in one process. |
+| **Pro** | Performance (Rust) | In Stalwart's own v1.0 benchmark against Postfix 3.11 and Dovecot 2.4 on identical hardware it won 35 of 38 tests - for example 5,445 against 723 inbound SMTP messages per second. Vendor numbers, worth re-testing. |
+| **Pro** | Modern standards | Native JMAP, DANE, MTA-STS, encryption at rest, and a built-in OAuth / OpenID Connect provider in the free edition. |
+| **Con** | No webmail of its own | Stalwart does not ship its own browser client (like Roundcube or SOGo). You add one - in my lab Bulwark Lite, served by Stalwart as an Application - or use desktop and mobile clients. |
+| **Con** | Smaller ecosystem and community | A young project: the first stable 1.0 was announced at the end of October 2026. Fewer ready-made guides and forum threads for unusual problems than for Postfix. |
+| **Con** | Clustering needs more moving parts | Multi-node high availability needs shared stores and a coordinator (Stalwart Keep, NATS or Redis) - and, with RocksDB, a data migration first. |
+| **Con** | Limited JMAP support in clients | The server does JMAP very well, but most popular mail clients still rely on IMAP. |
+
 ---
 
 ## References
@@ -122,6 +135,7 @@ My first impression after a week: Stalwart is the most complete open-source "Exc
 
 - [Stalwart Mail Server Setup Guide: The Rust Alternative](https://mailflowauthority.com/self-hosted-smtp/stalwart-setup-guide) — Braedon, Mailflow Authority
 - [Stalwart: an all-in-one mail server on a VPS](https://www.ssdnodes.com/learn/stalwart-mail-server-on-a-vps) — [Matt Connor](https://www.ssdnodes.com/learn/about), SSD Nodes
+- [Stalwart 1.0 Open-Source Mail Server Reaches Its First Stable Release](https://linuxiac.com/stalwart-1-0-open-source-mail-server-reaches-its-first-stable-release/) — Linuxiac (summary of the v1.0 announcement and the Postfix/Dovecot benchmark)
 - [Stalwart Mail Server Setup Guide (2026): Ports, SMTP Relay, Cloudflare & Mailcow](https://ecn-apps.com/pages/articles/stalwart-mail-server-guide.html) — ECN-APPS
 - [Self-hosted Stalwart email server](https://gist.github.com/chripede/99b7eaa1101ee05cc64a59b46e4d299f) — chripede, GitHub Gist (Docker Compose, reverse proxy, Roundcube, Tailscale)
 - [Stalwart mail server setup](https://mylinux.work/guides/stalwart-mail-server-setup/) — mylinux.work
@@ -138,6 +152,8 @@ My first impression after a week: Stalwart is the most complete open-source "Exc
 - [WebUI](https://stalw.art/docs/management/webui/)
 - [Authentication backends overview](https://stalw.art/docs/auth/backend/overview/), [internal directory](https://stalw.art/docs/auth/backend/internal/) and [OIDC directory](https://stalw.art/docs/auth/backend/oidc/) — the Keycloak trade-offs
 - [OAuth for mail clients](https://stalw.art/docs/auth/oauth/mail-clients/) and [Stalwart as an OpenID Connect provider](https://stalw.art/docs/auth/oauth/openid-connect/)
+- [Clustering overview](https://stalw.art/docs/cluster/) and [coordination](https://stalw.art/docs/cluster/coordination/) — shared stores and the coordinator
+- [System requirements of mailcow](https://docs.mailcow.email/getstarted/prerequisite-system) — for the resource comparison
 
 ## Stalwart Enterprise add-ons
 
