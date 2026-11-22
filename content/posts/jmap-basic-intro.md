@@ -1,7 +1,7 @@
 +++
-date = '2026-01-25T12:58:46+01:00'
-draft = true
-title = 'JMAP Fundamentals'
+date = '2026-06-25T12:58:46+01:00'
+draft = false
+title = 'JMAP practical fundamentals'
 +++
 
 
