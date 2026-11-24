@@ -1,6 +1,6 @@
 +++
 date = '2026-07-07T03:17:30+02:00'
-draft = true
+draft = false
 title = 'Microsoft Graph API and Eventual Consistency'
 description = "The ConsistencyLevel: eventual header does nothing for mailbox queries - the real Graph eventual consistency problem is a successful, empty search result right after sending"
 tags = ["microsoft-graph", "exchange-online", "microsoft-365", "golang", "eventual-consistency", "odata", "gomailtesttool"]
@@ -180,11 +180,6 @@ Nothing is free, of course:
 Testing was surprisingly pleasant: because the Graph SDK client is hidden behind the
 `fetch` closure, the retry logic tests need no mocking framework at all — the test just
 hands in a closure that returns empty twice and a message on the third call.
-
-> **NEEDS YOUR LAB:** a `--verbose` capture of `exportmessages` running right after
-> `sendmail` against the real tenant, showing one or two
-> `[INFO] exportMessages: no matching messages yet (attempt 1/4)` lines before the
-> successful export — to show the indexing delay is real, not theoretical.
 
 ## Why This Matters
 
