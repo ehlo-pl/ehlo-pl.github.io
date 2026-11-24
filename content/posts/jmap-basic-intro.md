@@ -5,7 +5,7 @@ title = 'JMAP practical fundamentals'
 +++
 
 
-Got it — you want to interact with an email server using JMAP (JSON Meta Application Protocol) via cURL.
+Let's quickly review how to interact with an email server using JMAP (JSON Meta Application Protocol) via cURL.
 JMAP is a modern, JSON-over-HTTP alternative to IMAP/SMTP for email, contacts, and calendars.
 Below is a complete runnable example showing how to authenticate and fetch email data using cURL.
 
@@ -123,7 +123,3 @@ RFC 8621 — JMAP Mail
 * Since its release of version 3.6.0 in 2021, [Apache Software Foundation](https://en.wikipedia.org/wiki/The_Apache_Software_Foundation "The Apache Software Foundation")’s free mail-server [Apache James](https://en.wikipedia.org/wiki/Apache_James "Apache James") has included support for the JMAP RFCs.[\[12\]](https://en.wikipedia.org/wiki/JSON_Meta_Application_Protocol#cite_note-james-3.6.0-12)[\[13\]](https://en.wikipedia.org/wiki/JSON_Meta_Application_Protocol#cite_note-13) The OpenPaas collaboration platform implements its email and webmail UI using James and JMAP.[\[14\]](https://en.wikipedia.org/wiki/JSON_Meta_Application_Protocol#cite_note-14)
 * [Cyrus IMAP](https://en.wikipedia.org/wiki/Cyrus_IMAP_server "Cyrus IMAP server") provisionally supports the JMAP protocol standards as of version 3.8.3, released in May 2024, when built with this functionality.[\[15\]](https://en.wikipedia.org/wiki/JSON_Meta_Application_Protocol#cite_note-15)
 * Stalwart Mail Server is a scalable open-source mail server written in Rust with full support for JMAP Core, JMAP Mail, JMAP over WebSocket at IMAP4rev2.[\[16\]](https://en.wikipedia.org/wiki/JSON_Meta_Application_Protocol#cite_note-16)
-
-
-
-
