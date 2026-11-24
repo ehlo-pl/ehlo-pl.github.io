@@ -11,7 +11,7 @@ categories = ["Microsoft 365"]
 
 Every Exchange Online tenant collects applications over time: a mail archiver, a room booking system, a reporting script running in Azure Automation, a "temporary" tool which somebody registered three years ago. Each of them talks to mailbox data through Microsoft Graph (or still EWS), and each of them has a life: somebody creates it, gives it permissions and a credential, and - if we are lucky - somebody removes it at the end.
 
-> **NEEDS YOUR LAB:** one or two sentences on what triggered this post for you (an audit, an incident, a forgotten app with `Mail.Read` you found in a tenant).
+Some times, especially when you apply separation of duties, it happen that some team create new Registered Application (by some automation, cloud team or ok Active Directory/Entra team), some team grant admin approval for appRole. But by design scope are assigned by mailing team (as it's on Exchange tools :( -)). It **could** lead to give some small application access to nearly all mailboxes (including VIPs).
 
 I tried to put the whole lifecycle in one place, with the commands I would actually use for each stage.
 
