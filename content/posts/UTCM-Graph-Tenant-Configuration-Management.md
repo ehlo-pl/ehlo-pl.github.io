@@ -9,7 +9,7 @@ categories = ["PowerShell"]
 
 ## The Discovery
 
-I noticed a new endpoint in Microsoft Graph that I had not seen before (it was only in beta :)):
+I noticed a new endpoint in Microsoft Graph that I had not seen before (at first it was only in beta :)):
 
 ```
 https://graph.microsoft.com/v1.0/admin/configurationManagement/configurationMonitors
@@ -23,11 +23,11 @@ This is **Unified Tenant Configuration Management** (UTCM), sometimes just calle
 
 Tenant Configuration Management is a set of Graph APIs for configuration-as-code in Microsoft 365. Office365ITPros describes it as a Microsoft-engineered version of Desired State Configuration (DSC) — same idea, different technology underneath. You describe how the tenant should look, and the service tells you when reality is different.
 
-Workloads covered (according to the community articles at the time of preview): Exchange Online, Entra, Purview, Teams, Intune and Defender (limited). SharePoint Online and OneDrive are not covered. Microsoft says the solution supports hundreds of resource types (over 300 was mentioned), for example `microsoft.entra.conditionalaccesspolicy` or `microsoft.exchange.transportrule`.
+Workloads covered: Entra, Intune, Exchange Online, Teams, and Security & Compliance (Defender and Purview). SharePoint Online and OneDrive are not covered. The Entra FAQ talks about over 200 supported resource types, for example `microsoft.entra.conditionalaccesspolicy` or `microsoft.exchange.transportrule`.
 
 It is not available in government or China clouds — Microsoft Learn shows the global service only.
 
-A word about the status: early articles from January/February 2026 talk about public preview and `/beta/` endpoints. Microsoft Learn now documents the same APIs under `v1.0` and Entra Tenant Governance docs call them generally available. However, the authentication article still says "during public preview" when describing service principal setup. So the state is a bit blurry; check the docs before you rely on it.
+A word about the status: early articles from January/February 2026 talk about public preview and `/beta/` endpoints. Today the core APIs (snapshots, monitors, results, drifts) are generally available in `v1.0`. They are also the engine behind configuration management in **Microsoft Entra Tenant Governance**, so the same monitors, results and drifts are visible in the Entra admin center, not only through Graph. Newer additions — configuration templates, drift remediation and the `applyOnce` monitor mode — are still in preview on `beta`.
 
 ## The Building Blocks
 
@@ -104,18 +104,16 @@ $body = @{
     )
 }
 Invoke-MgGraphRequest -Method POST `
-    -Uri "beta/admin/configurationManagement/configurationSnapshots/createSnapshot" `
+    -Uri "v1.0/admin/configurationManagement/configurationSnapshots/createSnapshot" `
     -Body $body
 ```
 
-(the community articles use `beta` here — check the v1.0 reference for the current path.)
-
-Then poll `configurationSnapshotJobs`. When the job finishes, it contains `resourceLocation` — a URL where the extracted configuration lives:
+Then poll `configurationSnapshotJobs`. When the job finishes, it contains `resourceLocation` — a URL where the extracted configuration lives. Note the `$select`: `resourceLocation` is returned only when you ask for it explicitly, without it the property is empty and the next call fails.
 
 ```powershell
 $filter   = "displayName eq 'Conditional Access Baseline'"
 $job      = (Invoke-MgGraphRequest -Method GET -OutputType PSObject `
-             -Uri "beta/admin/configurationManagement/configurationSnapshotJobs/?`$filter=$filter").value
+             -Uri "v1.0/admin/configurationManagement/configurationSnapshotJobs?`$filter=$filter&`$select=id,status,resourceLocation").value
 $snapshot = Invoke-MgGraphRequest -Method GET -Uri $job[0].resourceLocation
 ```
 
@@ -171,38 +169,38 @@ $body = @{
 } | ConvertTo-Json -Depth 10
 
 Invoke-MgGraphRequest -Method POST -Body $body `
-    -Uri "beta/admin/configurationManagement/configurationMonitors"
+    -Uri "v1.0/admin/configurationManagement/configurationMonitors"
 ```
 
 Note `-Depth 10` — without it `ConvertTo-Json` flattens nested properties and you get a broken baseline.
 
 Limits worth knowing:
 
-- max **30 monitors** per tenant
+- max **30 monitors** per tenant, and max **200 resource instances** in one monitor baseline
 - fixed interval **every 6 hours** — cannot be changed
-- max **800 monitored resources per day per tenant**. A resource in a baseline is checked 4 times a day, so it costs 4 units. Microsoft example: 20 transport rules + 30 CA policies = 50 resources × 4 = 200 per day. Simple math: about 200 resources in total across all monitors is the real ceiling
+- max **800 monitored resources per day per tenant**. A resource in a baseline is checked 4 times a day, so it costs 4 units. Microsoft example: 20 transport rules + 30 CA policies = 50 resources × 4 = 200 per day. Simple math: about 200 resources in total across all monitors is the real ceiling. Licences move it a bit: each Microsoft Entra ID Governance, Entra Suite or Microsoft 365 E7 licence adds 10 monitored resources per day (and 35 snapshot resources per month)
 - when you update a monitor baseline, all previous monitoring results and drifts for that monitor **are deleted**
 
 ### Results and drift
 
 ```powershell
 $monitor = (Invoke-MgGraphRequest -Method GET -OutputType PSObject `
-    -Uri "beta/admin/configurationManagement/configurationMonitors/?`$filter=displayName eq 'Conditional Access Monitor'").value
+    -Uri "v1.0/admin/configurationManagement/configurationMonitors/?`$filter=displayName eq 'Conditional Access Monitor'").value
 
 # summary of every run
 Invoke-MgGraphRequest -Method GET -OutputType PSObject `
-    -Uri "beta/admin/configurationManagement/configurationMonitoringResults?`$filter=monitorId eq '$($monitor[0].id)'"
+    -Uri "v1.0/admin/configurationManagement/configurationMonitoringResults?`$filter=monitorId eq '$($monitor[0].id)'"
 
 # details of drifts
 Invoke-MgGraphRequest -Method GET -OutputType PSObject `
-    -Uri "beta/admin/configurationManagement/configurationDrifts?`$filter=monitorId eq '$($monitor[0].id)'"
+    -Uri "v1.0/admin/configurationManagement/configurationDrifts?`$filter=monitorId eq '$($monitor[0].id)'"
 ```
 
 A drift object has `resourceType`, `baselineResourceDisplayName`, `firstReportedDateTime`, `status` (`active` or `fixed`) and `driftedProperties` (with the current and desired value). Note that `driftedProperties` and `resourceInstanceIdentifier` are returned only when you ask for them with `$select`.
 
-There is no "revert" button. In the current monitor mode (`monitorOnly`) the service only reports. You either fix the setting yourself in the admin center (next run marks the drift as `fixed`, and it is deleted 30 days later), or you accept the change and create a new baseline. Microsoft mentions a more sophisticated resolution mechanism in the future.
+In `monitorOnly` mode the service only reports. You either fix the setting yourself in the admin center (next run marks the drift as `fixed`, and it is deleted 30 days later), or you accept the change and update the baseline.
 
-> **NEEDS YOUR LAB:** real output from my tenant: `createSnapshot` response, the finished snapshot job with `resourceLocation`, one monitoring result and one drift after I change a Conditional Access policy or transport rule. Screenshot or JSON captured after the first 6-hour cycle.
+Since my first look Microsoft added a preview **remediate** action on a drift (beta endpoint). It tries to restore the drifted properties of one resource to the values from the baseline. There is also an `applyOnce` monitor mode which applies a whole baseline once and then makes the monitor inactive. Both run with delegated access, so they can change only what the signed-in admin is allowed to change in that workload, and they support fewer resource types than monitoring. I did not try them yet.
 
 ## Tooling Around It
 
@@ -214,8 +212,6 @@ Because the raw REST calls are quite verbose, community modules already appeared
 
 I did not install any of them yet, so no opinion about quality.
 
-> **NEEDS YOUR LAB:** short test of one of the modules (UTCM or EasyTCM) — install, connect, one snapshot — and what I think about it compared with raw `Invoke-MgGraphRequest`.
-
 ## Why This Matters
 
 - Native drift detection for tenant configuration, without buying a separate product. For Exchange Online it covers things I care about: transport rules, accepted domains, mail contacts, shared mailboxes.
@@ -225,16 +221,14 @@ I did not install any of them yet, so no opinion about quality.
 And what stops me:
 
 - 6 hours fixed frequency — this is drift detection, not real-time alerting
-- 800 resources per day quota is small for a big tenant
-- monitors only report; no remediation yet
+- 800 resources per day quota (a bit more with ID Governance licences) is small for a big tenant
+- monitors only report; remediation exists only as a preview, one resource at a time
 - there is a permission puzzle — a service principal that reads your whole tenant configuration must be handled with care (least privilege, and remember that monitors run as the UTCM principal regardless of who created them)
 - 7 days snapshot retention forces you to store the JSON elsewhere
 
 ## Closing Thought
 
 I like the direction. Mail-flow configuration is exactly the kind of thing that changes quietly and breaks something a week later — and now there is an official API to ask "what is different from yesterday". Next step for me: build a small baseline for transport rules and accepted domains in the lab tenant, and see how noisy the drifts are. Probably a Go or PowerShell tool on top of it, if the modules above do not already do what I want.
-
-> **NEEDS YOUR LAB:** one or two sentences about the YouTube video "Microsoft Entra Tenant Governance | Find Configuration Drift" (listed in references) — what it showed, in your own words. I could not read its content.
 
 ## References
 
@@ -243,10 +237,11 @@ I like the direction. Mail-flow configuration is exactly the kind of thing that 
 - [Create configurationMonitor](https://learn.microsoft.com/en-us/graph/api/configurationmanagement-post-configurationmonitors?view=graph-rest-1.0)
 - [configurationDrift resource type](https://learn.microsoft.com/en-us/graph/api/resources/configurationdrift?view=graph-rest-1.0)
 - [Configuration management (Entra Tenant Governance)](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/configuration-management)
+- [Microsoft Entra Tenant Governance FAQ](https://learn.microsoft.com/en-us/entra/id-governance/tenant-governance/faq)
+- [Microsoft Entra service limits and restrictions](https://learn.microsoft.com/en-us/entra/identity/users/directory-service-limits-restrictions)
 - [Office365ITPros: Unified Tenant Configuration Management (UTCM) beta](https://office365itpros.com/2026/02/03/utcm-beta/)
 - [Nik Charlebois: Introducing the TCM APIs](https://nik-charlebois.com/blog/posts/2026/introducing-tcm-apis/index.html)
 - [OurCloudNetwork: How to set up Unified Tenant Configuration Management](https://ourcloudnetwork.com/how-to-setup-unified-tenant-configuration-management/)
-- [YouTube: Microsoft Entra Tenant Governance | Find Configuration Drift](https://www.youtube.com/watch?v=nIOantcKcOI)
 - [ElliottLW/IaC-UTCM on GitHub](https://github.com/ElliottLW/IaC-UTCM)
 - [EasyTCM 0.5.0 on PowerShell Gallery](https://www.powershellgallery.com/packages/EasyTCM/0.5.0)
 - [UTCM 0.1.1 on PowerShell Gallery](https://www.powershellgallery.com/packages/UTCM/0.1.1)

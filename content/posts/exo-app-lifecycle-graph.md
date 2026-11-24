@@ -1,7 +1,7 @@
 +++
 title = 'The Lifecycle of an Exchange Online Application: From App Registration to Soft Delete'
 date = '2026-11-22T12:00:00+01:00'
-draft = true
+draft = false
 description = "Registration, scoped permissions with RBAC for Applications, credentials, governance and decommissioning of apps that touch Exchange Online data"
 tags = ["microsoft-graph", "exchange-online", "entra-id", "app-registration", "rbac-for-applications", "powershell"]
 categories = ["Microsoft 365"]
@@ -78,8 +78,6 @@ Test-ServicePrincipalAuthorization -Identity $sp.Id -Resource 'someone@contoso.c
 
 Instead of a management scope, `-RecipientAdministrativeUnitScope <AU id>` uses an Entra administrative unit directly.
 
-> **NEEDS YOUR LAB:** `Test-ServicePrincipalAuthorization` output from your tenant - one mailbox in scope (`InScope = True`) and one outside.
-
 Things which are easy to miss:
 
 - **Permissions are a union.** If the app *also* has `Mail.Read` consented in Entra, the scoped Exchange grant restricts nothing - the unscoped Entra grant still applies. Remove the Entra consent when you move an app to RBAC for Applications.
@@ -114,8 +112,6 @@ Get-MgApplication -All -Property DisplayName, AppId, PasswordCredentials, KeyCre
     Where-Object { $_.EndDateTime -and $_.EndDateTime -lt $limit } |
     Sort-Object EndDateTime
 ```
-
-> **NEEDS YOUR LAB:** sample output of the expiry report (anonymized app names are fine).
 
 ## 4. Monitoring and Governance
 
@@ -172,7 +168,7 @@ Exchange admins spent years tuning RBAC for *people*: role groups, scopes, split
 
 ## Closing Thought
 
-> **NEEDS YOUR LAB:** your own conclusion - for example which stage you see most often neglected in real tenants, and whether you would move existing apps from Application Access Policies to RBAC for Applications now.
+It's quite naive approach - actually real $BiGCORP involve more systems related to whole IGA ([Identity Governance and Administration](https://www.sailpoint.com/identity-library/identity-governance)). I tried use some those fundamentals in [EXORBACforAppManagement powershell module](https://github.com/ehlo-pl/EXORBACforAppManagement). Have fun. 
 
 ## References
 
