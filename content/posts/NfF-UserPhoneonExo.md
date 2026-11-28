@@ -3,12 +3,12 @@ title = "Nff Userphoneonexo"
 date = 2023-03-01T00:00:00Z
 draft = true
 description = "Nff Userphoneonexo"
+tags = ["m365", "powershell", "exo"]
 +++
 
 ---
 layout: post
 title: Notes from field: How to manage user photo
-tag: M365, PowerShell, EXO
 ---
  Get/Set-UserPhoto
 

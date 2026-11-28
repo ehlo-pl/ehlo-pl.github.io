@@ -3,12 +3,12 @@ title = "Nff How_To_Recover_User_Emails_In_Microsoft_365"
 date = 2023-03-01T00:00:00Z
 draft = true
 description = "Nff How_To_Recover_User_Emails_In_Microsoft_365"
+tags = ["m365", "powershell", "exo"]
 +++
 
 ---
 layout: post
 title: Notes from field: How to recover user emails in Microsoft 365
-tag: M365, PowerShell, EXO
 ---
 
 ... 
