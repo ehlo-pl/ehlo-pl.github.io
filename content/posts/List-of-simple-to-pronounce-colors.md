@@ -1,12 +1,12 @@
 +++
-title = "list of easy to pronouce colors"
+title = "list of easy to pronounce colors"
 date = 2018-07-01T00:00:00Z
-draft = true
-description = "list of easy to pronouce colors"
+draft = false
+description = "list of easy to pronounce colors"
 +++
 
 
-I needed simple to pronounce and clear names for my machines using in face 2 face training. I touhgt on colors. But usually my thinking on colors finish after red, blue, yellow, green (I want to avoid words starting from the same name, so grey, or black was not great names). So I type it in google. I tought that it's crazy search "[list of easy to pronouce colors](https://www.google.com/search?q=list+of+easy+to+pronouce+colors)". But I found: [List of 20 Simple, Distinct Colors](https://sashat.me/2017/01/11/list-of-20-simple-distinct-colors/). 
+I needed simple to pronounce and clear names for my machines using in face 2 face training. I tough on colors. But usually my thinking on colors finish after red, blue, yellow, green (I want to avoid words starting from the same name, so grey, or black was not great names). So I type it in google. I thought that it's crazy search "[list of easy to pronounce colors](https://www.google.com/search?q=list+of+easy+to+pronouce+colors)". But I found: [List of 20 Simple, Distinct Colors](https://sashat.me/2017/01/11/list-of-20-simple-distinct-colors/).
 
 ```powershell
 $colors = "Blue", "Cyan", "Grey", "Lime", "Magenta", "Navy", "Orange", "Purple", "Red", "Teal", "White", "Yellow"
