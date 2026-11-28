@@ -1,7 +1,7 @@
 +++
 title = "Test-GMERemoteX509Cert"
 date = 2019-06-01T00:00:00Z
-draft = true
+draft = false
 description = "Test-GMERemoteX509Cert"
 categories = ["PowerShell"]
 tags = ["PowerShell", "X509"]
